@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>   
+	<meta charset="UTF-8">   
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">   
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>
+</head>
+
+<body class="p-3 mb-2 bg-light text-dark" style="background-image: url(https://besthqwallpapers.com/Uploads/30-6-2022/201873/thumb2-volkswagen-jetta-gli-4k-front-view-2022-cars-studio.jpg);
+background-repeat: no-repeat; background-size: cover;">
+	<form th:action="@{/reportes/listaReservas}" th:method="POST">
+		<table class="text-center">
+			<h1 class="text-center" style="color: white;">Ingrese el periodo de fechas:</h1>
+			<tr class="text-center">
+				<td class="text-center" style="color: aliceblue;">
+					<label>Fecha inicial</label>
+				</td>
+				<td class="text-center" style="color: aliceblue;">
+					<input type="date" id="fechaInicio" name="fechaInicio" th.value="${fechaInicio}">
+				</td>
+			</tr>
+			<tr>
+				<td class="text-center" style="color: aliceblue;">
+					<label>Fecha final</label>
+				</td>
+				<td class="text-center" style="color: aliceblue;">
+					<input type="date" id="fechaFinal" name="fechaFinal" th.value="${fechaFinal}">
+				</td>
+			</tr>
+		</table>
+		<div style="text-align: center;">
+			<style>
+				.custom-button {
+					background-color: rgb(128, 128, 192);
+					color: #fff;
+					padding: 5px 10px;
+					border: none;
+					border-radius: 4px;
+				}
+			</style>
+		</div>
+			<input class="custom-button" type="submit" style="font-size: 16px;display: inline-block;margin-top: 20px;" value="Buscar">
+	</form>
+</body>
+
+</html>

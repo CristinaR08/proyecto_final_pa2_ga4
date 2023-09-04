@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!DOCTYPE html>
+
+	<html lang="en">
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Vehiculos Disponibles H</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	</head>
+
+<body class="p-3 mb-2 bg-light text-dark" style="background-image: url(https://besthqwallpapers.com/Uploads/12-10-2017/23769/lamborghini-huracan-4k-2017-lb724-o-ct-tuning.jpg);
+background-repeat: no-repeat; background-size: cover;">
+	<form th:action="@{/empleados/inicio}" th:method="GET">
+		<table class="table">
+			<thead class="thead-light">
+				<tr class = "text-center">
+					<th class = "text-center" scope="col" style="color: white;">Placa</th>
+					<th class = "text-center" scope="col" style="color: white;">Modelo</th>
+					<th class = "text-center" scope="col" style="color: white;">Marca</th>
+					<th class = "text-center" scope="col" style="color: white;">Cilindraje</th>
+					<th class = "text-center" scope="col" style="color: white;">Avaluo</th>
+					<th class = "text-center" scope="col" style="color: white;">Año fabricacion</th>
+					<th class = "text-center" scope="col" style="color: white;">ICE Total</th>
+					<th class = "text-center" scope="col" style="color: white;">Total cobrado</th>
+
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr class = "text-center" th:each="vehi:${lista}">
+					<td class = "text-center" th:text="${vehi.placa}"></td>
+					<td class = "text-center" th:text="${vehi.modelo}"></td>
+					<td class = "text-center" th:text="${vehi.marca}"></td>
+					<td class = "text-center" th:text="${vehi.cilindraje}"></td>
+					<td class = "text-center" th:text="${vehi.avaluo}"></td>
+					<td class = "text-center"th:text="${vehi.anioFabricacion}"></td>
+					<td class = "text-center" th:text="${vehi.valorDia}"></td>
+					<td class = "text-center" th:text="${vehi.paisFabricacion}"></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<div class="d-grid gap-2 col-6 mx-auto">
+			<input class="btn btn-outline-info border-3" type="submit" value="Regresar al Inicio">
+		</div>
+	</form>
+
+</body>
+
+</html>

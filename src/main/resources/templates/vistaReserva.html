@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentaCar - Reservar Vehículo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Estilos para el fondo de la página -->
+    <style>
+        body {
+            background-image: url(https://c.wallhere.com/photos/55/cc/Nissan_GT_R_car_blue_cars_road_tunnel_vehicle_Nissan-249694.jpg!d);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header-text {
+            font-size: 75px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(5,0,1);
+            text-shadow: 2px 2px 0px rgb(255, 240, 240);
+            margin-top: 100px;
+        }
+
+        .subheader-text {
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(5,0,1);
+            text-shadow: 2px 2px 0px rgb(243,243,244);
+        }
+
+        /* Estilos para el formulario */
+        .form-container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(5,0,1, 0.2);
+            margin-top: 50px;
+        }
+
+        .form-label {
+            font-size: 25px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #17a2b8;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .submit-btn {
+            font-size: 30px;
+            background-color: midnightblue;
+            color: azure;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header-text">RentaCar</h1>
+    <h3 class="subheader-text">Reservar Vehículo</h3>
+    <div class="form-container">
+        <form action="#" th:action="@{/clientes/confirmacion_reserva}" th:object="${reservaDTO}" th:method="GET">
+            <div class="form-group">
+                <label class="form-label">Placa del Vehiculo:</label>
+                <input class="form-input" type="text" id="placa" th:field="${reservaDTO.placa}">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Cedula:</label>
+                <input class="form-input" type="text" id="cedula" th:field="${reservaDTO.cedula}">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Fecha de Inicio:</label>
+                <input class="form-input" type="date" id="fechaini" th:field="${reservaDTO.fechaInicio}">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Fecha de Fin:</label>
+                <input class="form-input" type="date" id="fechafin" th:field="${reservaDTO.fechaFin}">
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <input class="submit-btn" type="submit" value="Verificar">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
